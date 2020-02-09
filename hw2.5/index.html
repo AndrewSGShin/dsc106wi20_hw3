@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dingus & Widget</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!-- <script src='resources/scripts/hw1.js'></script> -->
+    <script src='resources/scripts/hw2.js'></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src='resources/images/dw-logo.png' alt='Dingus & Widget'>
+            Global Dashboard
+        </h1>
+    </header>
+    
+    <main>
+        <section>
+            <div class='counters'>
+                <div>
+                    <h3 id='dingus_text'>Dingus</h3>
+                    <p id='dingus_count'>0</p>
+                </div>
+        
+                <div>
+                    <h3 id='widget_text'>Widget</h3>
+                    <p id='widget_count'>0</p>
+                </div>
+        
+                <div>
+                    <h3 id='sales_text'>Sales</h3>
+                    <p id='sales_count'><span>&dollar;</span>0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        
+        <section>
+            <div class='charts'>
+                <div class='pie'>
+                    <figure>
+                        <figcaption>Total Sales Breakdown</figcaption>
+                        <!-- <img src='resources/images/pie.png' alt='Pie Chart'> -->
+                        <svg height='400' width='650' viewbox='0 0 650 400'>
+                            <line x1='50' y1='50' x2='50' y2='350' stroke='black'></line>
+                            <line x1='50' y1='350' x2='600' y2='350' stroke='black'></line>
+
+                            <line x1='50' y1='50' x2='600' y2='50' stroke='black'></line>
+                            <line x1='50' y1='80' x2='600' y2='80' stroke='black'></line>
+                            <line x1='50' y1='110' x2='600' y2='110' stroke='black'></line>
+                            <line x1='50' y1='140' x2='600' y2='140' stroke='black'></line>
+                            <line x1='50' y1='170' x2='600' y2='170' stroke='black'></line>
+                            <line x1='50' y1='200' x2='600' y2='200' stroke='black'></line>
+                            <line x1='50' y1='230' x2='600' y2='230' stroke='black'></line>
+                            <line x1='50' y1='260' x2='600' y2='260' stroke='black'></line>
+                            <line x1='50' y1='290' x2='600' y2='290' stroke='black'></line>
+                            <line x1='50' y1='320' x2='600' y2='320' stroke='black'></line>
+
+                            <text x='200' y='20' id='barTitle'>Dingus vs. Widget</text>
+                            <text x='100' y='40'>Percentage of each product sold per date.</text>
+                            <text class='labels' id='yLabel' x=10 y='165'>% of Sales</text>
+                            <text class='labels' x='300' y='390'>Date</text>
+
+                            <text class='yAxis' x='22' y='55'>100%</text>
+                            <text class='yAxis' x='25' y='85'>90%</text>
+                            <text class='yAxis' x='25' y='115'>80%</text>
+                            <text class='yAxis' x='25' y='145'>70%</text>
+                            <text class='yAxis' x='25' y='175'>60%</text>
+                            <text class='yAxis' x='25' y='205'>50%</text>
+                            <text class='yAxis' x='25' y='235'>40%</text>
+                            <text class='yAxis' x='25' y='265'>30%</text>
+                            <text class='yAxis' x='25' y='295'>20%</text>
+                            <text class='yAxis' x='25' y='325'>10%</text>
+                            <text class='yAxis' x='28' y='355'>0%</text>
+
+                            <text class='xAxis' id='barDate1' x='80' y='365'></text>
+                            <text class='xAxis' id='barDate2' x='155' y='365'></text>
+                            <text class='xAxis' id='barDate3' x='230' y='365'></text>
+                            <text class='xAxis' id='barDate4' x='305' y='365'></text>
+                            <text class='xAxis' id='barDate5' x='380' y='365'></text>
+                            <text class='xAxis' id='barDate6' x='455' y='365'></text>
+                            <text class='xAxis' id='barDate7' x='530' y='365'></text>
+
+                            <rect id='dBar1' class='dBars' x='85' y='50' height='0' width='40'></rect>
+                            <rect id='wBar1' class='wBars' x='85' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar2' class='dBars' x='160' y='50' height='0' width='40'></rect>
+                            <rect id='wBar2' class='wBars' x='160' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar3' class='dBars' x='235' y='50' height='0' width='40'></rect>
+                            <rect id='wBar3' class='wBars' x='235' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar4' class='dBars' x='310' y='50' height='0' width='40'></rect>
+                            <rect id='wBar4' class='wBars' x='310' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar5' class='dBars' x='385' y='50' height='0' width='40'></rect>
+                            <rect id='wBar5' class='wBars' x='385' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar6' class='dBars' x='460' y='50' height='0' width='40'></rect>
+                            <rect id='wBar6' class='wBars' x='460' y='50' height='0' width='40'></rect>
+
+                            <rect id='dBar7' class='dBars' x='535' y='50' height='0' width='40'></rect>
+                            <rect id='wBar7' class='wBars' x='535' y='50' height='0' width='40'></rect>
+
+                            <rect id='legendBox' x='500' y='0' rx='5' ry='5' height='40' width='80'></rect>
+                            <rect id='legendDingus' x='505' y='7' height='10' width='10'></rect>
+                            <rect id='legendWidget' x='505' y='23' height='10' width='10'></rect>
+                            <text class='legendLabels' x='520' y='16'>Dingus</text>
+                            <text class='legendLabels' x='520' y='31'>Widget</text>
+                        </svg>
+                    </figure>
+                </div>
+        
+                <div class='bar'>
+                    <figure>
+                        <figcaption>Sales Per Day</figcaption>
+                        <!-- <img src='resources/images/bar.png' alt='Sales Per Day'> -->
+                        <svg height='400' width='650' viewbox='0 0 410 400'>
+                            <circle cx='230' cy='230' r='150' id='outerCircle'></circle>
+                            <circle id='widgetPie' cx='230' cy='230' r='75' fill='transparent' stroke='royalblue' stroke-width='150' stroke-dasharray='calc(50*471.24/100) 471.24' transform='rotate(-90) translate(-460)'></circle>
+                            <circle id='hole' cx='230' cy='230' r='90'></circle>
+                            <text id='pieTitle' x='180' y='25'>Sales Mix</text>
+                            <text x='50' y='45'>Comparing the proportion for each product</text>
+                            <text x='110' y='65'>sold relative to total sales.</text>
+
+                            <rect id='legendBox2' x='400' y='100' rx='5' ry='5' height='60' width='125'></rect>
+                            <rect id='legendDingus2' x='405' y='110' height='15' width='15'></rect>
+                            <rect id='legendWidget2' x='405' y='133' height='15' width='15'></rect>
+                            <text id='dynamicDingus' class='legendLabels2' x='425' y='122'>Dingus</text>
+                            <text id='dynamicWidget' class='legendLabels2' x='425' y='145'>Widget</text>
+                        </svg>
+                    </figure>
+                </div>
+        
+                <!-- <div class="pie">
+                    <figure>
+                        <div class='line'>
+                            <iframe src='https://app.zingsoft.com/demos/view/DK4RG3XN'></iframe>
+                        </div>
+                    </figure>
+                    <a href='https://app.zingsoft.com/demos/view/DK4RG3XN'>Source</a>
+                </div> -->
+            </div>
+        </section>
+        
+        <hr>
+
+        <section>
+            <table id='table'>
+                <caption>Order History</caption>
+                <colgroup>
+                    <col id='background'>
+                    <col span="4">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th rowspan="2" id='box_1'>ID#</th>
+                        <th rowspan="2">Date</th>
+                        <th colspan="2">Quantity</th>
+                        <th rowspan="2">Total</th>
+                    </tr>
+                    <tr>
+                        <th>Dingus</th>
+                        <th>Widget</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <!-- <tr>
+                        <td id='box_2'>1221</td>
+                        <td>12/12/19</td>
+                        <td>4</td>
+                        <td>10</td>
+                        <td>$12.33</td>
+                    </tr>
+        
+                    <tr>
+                        <td id='box_3'>1222</td>
+                        <td>12/21/19</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>$27.34</td>
+                    </tr>
+        
+                    <tr>
+                        <td id='box_4'>1223</td>
+                        <td>1/5/20</td>
+                        <td>14</td>
+                        <td>19</td>
+                        <td>$345.33</td>
+                    </tr> -->
+                </tbody>
+                
+                <tfoot>
+                    <tr>
+                        <td colspan="5" id='box_5'>&copy; 2020 D&W Worldwide.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        
+        <section>
+            <details>
+                <summary>Order Form</summary>
+                <dialog id='dialog'>
+                    <p>This section will work only after HW2!</p>
+                </dialog>
+        
+                <form class='pure-form'>
+                    <hr>
+                    <fieldset>
+                        <p>
+                            <label>Dingus</label> <input type='number' value='0' id='reset1' min='0'> &commat; <input type='text' value='14.25' readonly> &equals; &dollar; <input type='text' value='0.00' id='dingus_total' readonly><br>
+                        </p>
+                        <p>
+                            <label>Widget</label> <input type='number' value='0' id='reset2' min='0'> &commat; <input type='text' value='9.99' readonly> &equals; &dollar; <input type='text' value='0.00' id='widget_total' readonly><br>
+                        </p>
+                        <p>
+                            <label>Total &dollar;</label><input type='text' value='0.00' id='dw_total' readonly><br>
+                        </p>
+                        <!-- <p>
+                            <label>Shipping</label> <input list='shipping'>
+                            <datalist id='shipping'>
+                                <option value='Standard'>Standard</option>
+                                <option value='Express'>Express</option>
+                                <option value='2-Day'>2-Day</option>
+                                <option value='Same Day'>Same Day</option>
+                            </datalist><br>
+                        </p>
+                        <p>
+                            <label>Payment</label><br>
+                            <select multiple>
+                                <option value='Visa'>Visa</option>
+                                <option value='MasterCard'>MasterCard</option>
+                                <option value='Paypal'>Paypal</option>
+                            </select><br>
+                        </p>
+                        <p>
+                            <label>Comment</label> <textarea></textarea><br>
+                        </p> -->
+                        <p>
+                            <button id='error_button' class='pure-button' type="button">Cancel</button> <button id='success_button' class='pure-button' disabled type="button">Order</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </details>
+        </section>
+    </main>
+
+    <!-- <footer>
+        <p>This page is provided <em>as is</em></p>
+        <p>Notes</p>
+        <ul>
+            <li>Your order will leave warehouse in 3-5 days</li>
+            <li>If you have any question please contact us at 123456789</li>
+            <li>D&W is a proud supporter of the <i>Stuart Collection</i></li>
+        </ul>
+        <address>
+            <p><i>9500 Gilman Dr, La Jolla, CA 92093</i></p>
+        </address>
+    </footer> -->
+</body>
+</html>

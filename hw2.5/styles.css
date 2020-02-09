@@ -1,0 +1,175 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h3{
+    font-family: 'Paytone One', sans-serif;
+}
+
+h1 img{
+    height: auto;
+    max-width: 10%;
+}
+
+h3{
+    font-size: medium;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+table{
+    width: 75%;
+    margin: auto;
+}
+
+#background{
+    background-color: gainsboro;
+}
+
+td{
+    text-align: center;
+}
+
+.counters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#dingus_text, #widget_text, #sales_text{
+    font-size: large;
+}
+#dingus_count, #widget_count, #sales_count{
+    color: blue;
+    font-size: xx-large;
+    margin: 0;
+}
+
+#sales_count span{
+    color: green;
+}
+
+.charts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.charts div{
+    flex: 1;
+    justify-content: space-around;
+}
+
+/* .charts img{
+    width: 75%;
+    height: auto;
+} */
+
+.charts svg{
+    width: 75%;
+    height: auto;
+}
+
+.pie, .bar{
+    flex-basis: 50%;
+    flex-shrink: 1;
+}
+
+/* .line{
+    flex-basis: 40%;
+    flex-shrink: 1;
+    overflow: hidden;
+    padding-top: 100%;
+    position: relative;
+}
+
+iframe{
+    border: 0;
+    margin: 0;
+    width: 120%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    position: absolute;
+} */
+
+summary{
+    font-weight: bold;
+}
+
+form fieldset{
+    border: 0 none;
+}
+
+#success_button{
+    background: rgb(28, 184, 65);
+    color: white;
+}
+
+#error_button{
+    background: rgb(202, 60, 60);
+    color: white;
+}
+
+.xAxis, .yAxis{
+    font-size: 10px;
+}
+
+#barTitle{
+    font-weight: bold;
+}
+
+#pieTitle{
+    font-weight: bold;
+    font-size: larger;
+}
+
+#yLabel{
+    writing-mode: vertical-lr;
+}
+
+.labels{
+    font-weight: bold;
+}
+
+.dBars{
+    fill: navy;
+}
+
+.wBars{
+    fill: royalblue;
+}
+
+#legendBox, #legendBox2{
+    fill: darkgray;
+    stroke: black;
+}
+
+#legendDingus, #legendDingus2{
+    fill: navy;
+}
+
+#legendWidget, #legendWidget2{
+    fill: royalblue;
+}
+
+.legendLabels{
+    font-size: 11px;
+}
+
+.legendLabels2{
+    font-size: 14px;
+}
+
+#outerCircle{
+    fill: navy;
+}
+
+#hole{
+    fill: white;
+}
+
